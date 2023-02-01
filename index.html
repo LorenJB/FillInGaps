@@ -1,0 +1,92 @@
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body>
+        <p>
+            <div class="jumbotron jumbotron-fluid w-75 m-auto p-2  text-justify">
+                <div class="container position-relative">
+                    <form >
+                            <h1 class="display-4 mb-3">Task 2 - Fill in the gaps</h1>
+                            The escape of the Brazilian boa constrictor earned Harry his longest-ever punishment.<select id="caja1" onchange="comprobarResultado(1)" class="selectpicker" aria-label=".form-select-sm example">
+                                    <option value="">     </option>
+                                    <option value="1">On</option>
+                                    <option value="2">Of</option>
+                                    <option value="3">By</option>
+                                    <option value="4">Which</option>
+                                </select><div class="invalid-feedback">Solution Invalid</div> the time he was allowed out of his cupboard again, the summer holidays had started, and Dudley had <select id="caja2" onchange="comprobarResultado(2)"  class="custom-select" aria-label=".form-select-sm example">
+                                    <option value="">     </option>
+                                    <option value="1">already</option>
+                                    <option value="2">also</option>
+                                    <option value="3">yet</option>
+                                    <option value="4">too</option>
+                                </select><div class="invalid-feedback">Solution Invalid</div> broken his new video camera, crashed his remote-control airplane, and, first time out on his racing bike, fallen down old Mrs. Figg.
+                            Harry was glad school was over, but there was no escaping Dudley’s friends, who visited the house every single day. Piers, Dennis, Malcolm, and Gordon were all big and stupid, but as Dudley was the <select id="caja3" onchange="comprobarResultado(3)" class="custom-select" aria-label=".form-select-sm example">
+                                    <option value="">     </option>
+                                    <option value="1">most big</option>
+                                    <option value="2">bigger</option>
+                                    <option value="3">big</option>
+                                    <option value="4">biggest</option>
+                                </select><div class="invalid-feedback">Solution Invalid</div> and stupidest of all of them, he was the leader. The rest of <select id="caja4" onchange="comprobarResultado(4)" class="custom-select" aria-label=".form-select-sm example">
+                                    <option value="">     </option>
+                                    <option value="1">there</option>
+                                    <option value="2">them</option>
+                                    <option value="3">else</option>
+                                    <option value="4">all</option>
+                                </select><div class="invalid-feedback">Solution Invalid</div> were all quite happy to join in Dudley’s favorite sport: Harry Bullying.
+                            This was why Harry spent as much time <select id="caja5" onchange="comprobarResultado(5)"  class="custom-select" aria-label=".form-select-sm example">
+                                    <option value="">     </option>
+                                    <option value="1">by</option>
+                                    <option value="2">to</option>
+                                    <option value="3">as</option>
+                                    <option value="4">all</option>
+                                </select><div class="invalid-feedback">Solution Invalid</div> possible out of the house, thinking about the end of the holidays, where he could see a tiny ray of hope in his life, he wouldn’t be with Dudley. Dudley had been accepted at Uncle Vernon’s old private school, Smeltings. Piers Polkiss was going there too. Harry, on the other <select id="caja6" onchange="comprobarResultado(6)"  class="custom-select" aria-label=".form-select-sm example">
+                                    <option value="">     </option>
+                                    <option value="1">finger</option>
+                                    <option value="2">hand</option>
+                                    <option value="3">part</option>
+                                    <option value="4">way</option>
+                                </select><div class="invalid-feedback">Solution Invalid</div> , was going to Stonewall High, the local public school. Dudley thought this was very funny.                                
+                                <blockquote class="blockquote mb-0 mt-4 mb-2">
+                                    <footer class="blockquote-footer"><cite title="Source Title">Source: Harry Potter and the Philosopher's Stone Source Title</cite>
+                                    </footer>
+                                </blockquote>
+                                <button type="button" onclick="resetar()" class="btn btn-outline-info position-absolute bottom-0 end-0">Reset</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+            
+        </p>
+        <script>
+            var palabrasCorrectas = ["By", "already", "biggest", "them", "as", "hand"];
+            function comprobarResultado(params) {
+                let inputWord = document.getElementById("caja"+params);
+                let inputWordText = inputWord.options[inputWord.selectedIndex].text;
+                inputWord.removeAttribute("class");
+                if (palabrasCorrectas.includes(inputWordText)){
+                    inputWord.classList.add("border");
+                    inputWord.classList.add("border-success");
+                    inputWord.classList.add("text-success");
+                    inputWord.classList.add("bg-success");
+                    inputWord.classList.add("bg-opacity-25");
+                    inputWord.disabled = true;
+                }else{
+                    inputWord.classList.add("border");
+                    inputWord.classList.add("border-danger");
+                    inputWord.classList.add("text-danger");
+                    inputWord.classList.add("bg-danger");
+                    inputWord.classList.add("bg-opacity-25")
+                }
+            }
+            function resetar() {
+                for (let i = 1; i <= 6; i++) {
+                    let inputWord = document.getElementById("caja"+i);
+                    inputWord.value = "";
+                    inputWord.removeAttribute("class");
+                    inputWord.disabled = false;
+                }
+            }
+        </script>
+    </body>
+</html>
